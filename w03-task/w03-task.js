@@ -65,8 +65,8 @@ function getTotal() {
     let subtotal = Number(document.querySelector('#subtotal').value);
     let checkbox = document.querySelector("#member");
     
-    if (checkbox.checked == true){document.querySelector('#total').innerHTML = subtotal * 0.8;} 
-      else {document.querySelector('#total').innerHTML = subtotal;}     
+    if (checkbox.checked == true){document.querySelector('#total').innerHTML = (subtotal * 0.8).toFixed(2);} 
+      else {document.querySelector('#total').innerHTML = subtotal.toFixed(2);}     
 };
 
 document.querySelector('#getTotal').addEventListener('click', getTotal);
