@@ -5,7 +5,7 @@
 /* Step 2 - Variables */
 let fullName = "Adam Zobrist";
 let currentYear = 2024;
-let profilePicture = 'images\\upworkProfilePicture.jpg';
+let profilePicture = 'w02-task\\images\\upworkProfilePicture.jpg';
 
 /* Step 3 - Element Variables */
 const nameElement = document.getElementById('name');
