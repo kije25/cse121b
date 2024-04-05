@@ -53,9 +53,9 @@ const filterTemples = function(temples) {
     let filter = document.querySelector('#filtered').value;
     switch (filter) {
         case 'utah':
-            
-            
-            
+            temples.filter(temple => {temple.location.includes('Utah')})
+
+            getTemples(temples);
            
                 
             
@@ -63,13 +63,21 @@ const filterTemples = function(temples) {
             break;
         
         case 'notutah':
+            temples.filter(temple => { if (temple.location.includes('Utah')) {return false}})
 
+            getTemples(temples);
 
 
 
             break;
 
         case 'older':
+            temples.filter(temple => {temple.dedicated})
+            /* The dedicated item in the array is a string. I have to extract the substring that is
+            a number, convert it to an int, and then check if it is less than 1950. I can't even figure out
+            how to get information out of the location string. */
+            getTemples(temples);
+
 
             break;
         case 'all':
