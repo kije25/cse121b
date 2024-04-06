@@ -26,11 +26,11 @@ const displayTemples = (temples) => {
 
 
 /* async getTemples Function using fetch()*/
-const getTemples = async (list) => {
+const getTemples = async () => {
     const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
     if (response.ok){
-        list = await response.json();
-        displayTemples(list);
+        templeList = await response.json();
+        displayTemples(templeList);
     } 
 };
 
@@ -53,36 +53,16 @@ const filterTemples = function(temples) {
     let filter = document.querySelector('#filtered').value;
     switch (filter) {
         case 'utah':
-            temples.filter(temple => {temple.location.includes('Utah')})
-
-            getTemples(temples);
-           
-                
-            
-            
+            displayTemples(temples.filter(temple => temple.location.toLowerCase().includes("utah")))
             break;
-        
         case 'notutah':
-            temples.filter(temple => { if (temple.location.includes('Utah')) {return false}})
-
-            getTemples(temples);
-
-
-
+            displayTemples(temples.filter(temple => !temple.location.toLowerCase().includes("utah")))
             break;
-
         case 'older':
-            temples.filter(temple => {temple.dedicated})
-            /* The dedicated item in the array is a string. I have to extract the substring that is
-            a number, convert it to an int, and then check if it is less than 1950. I can't even figure out
-            how to get information out of the location string. */
-            getTemples(temples);
-
-
+            displayTemples(temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
             break;
         case 'all':
-            
-            getTemples(temples);
+            displayTemples(temples)
             break;
         }}
     
@@ -104,4 +84,4 @@ document.querySelector("#filtered").addEventListener("change", () => { filterTem
 
 
 
-getTemples(templeList);
+getTemples();
