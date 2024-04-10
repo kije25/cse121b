@@ -9,22 +9,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="w02-task/styles/main.css">
+  <link rel="stylesheet" href="../w02-task/styles/main.css">
 </head>
 
 <body>
   <nav>
     <ul id="menu">
       <li><a id="toggleMenu">&equiv;</a></li>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="w01-task/w01-task.html">W1 Task</a></li>
-      <li><a href="w03-task/w03-task.html">W3 Task</a></li>
-      <li><a href="w04-task/w04-task.html">W4 Task</a></li>
-      <li><a href="w05-task/w05-task.html">W5 Task</a></li>
-      <li><a href="project/project.html">Project</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../w01-task/w01-task.html">W1 Task</a></li>
+      <li><a href="../w03-task/w03-task.html">W3 Task</a></li>
+      <li><a href="../w04-task/w04-task.html">W4 Task</a></li>
+      <li><a href="../w05-task/w05-task.html">W5 Task</a></li>
+      <li><a href="../project/project.html" class="active">Project</a></li>
     </ul>
   </nav>
+  <main id="gridly">
+    <h1>Project: Hero Database</h1>
+  
+    <select id="filtered" title="Choose a publisher.">
+      <option value="" disabled selected>Filter Heros</option>
+      <option value="marvel">Marvel</option>
+      <option value="dc">DC Comics</option>
+      <option value="other">Other</option>
+      <option value="all">All</option>
+    </select>
 
+ 
+    <div id="heros">
+    </div>
+    <script src="../w02-task/scripts/main.js"></script>
+    <script src="project.js"></script>
+  </main>
 
-  <script src="scripts/main.js"></script>
 </body>
